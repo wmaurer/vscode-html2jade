@@ -2,16 +2,13 @@
 
 ## Install
 
-`Ctrl/Cmd+P` in Visual Studio Code, then:
+In the command palette (`Ctrl-Shift-P` or `Cmd-Shift-P`) select Install Extension and search for **html2jade**
 
-```
-ext install html2jade
-```
+## Usage
 
-## Commands
-
-* `extension.html2jade`: Convert selected HTML to Jade
-* `extension.jade2html`: Convert selected Jade to HTML
+In the command palette (`Ctrl-Shift-P` or `Cmd-Shift-P`) type **jade**. You should see the following two commands:
+* 'Convert HTML to Jade'
+* 'Convert Jade to HTML'
 
 ## Known Issues
 

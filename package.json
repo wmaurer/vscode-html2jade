@@ -3,8 +3,8 @@
 	"description": "Convert HTML to Jade, and Jade to HTML",
 	"icon": "images/html2jade-icon.png",
 	"galleryBanner": {
-		"color": "#1e1e1e",
-		"theme": "dark"
+		"color": "#e1e1e1",
+		"theme": "light"
 	},
 	"repository": {
 		"type": "git",
@@ -14,7 +14,7 @@
 		"url": "https://github.com/wmaurer/vscode-html2jade/issues"
 	},
 	"license": "MIT",
-	"version": "0.1.0",
+	"version": "0.1.5",
 	"publisher": "wmaurer",
 	"engines": {
 		"vscode": "^0.10.0"
