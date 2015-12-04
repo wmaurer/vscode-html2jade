@@ -14,7 +14,7 @@
 		"url": "https://github.com/wmaurer/vscode-html2jade/issues"
 	},
 	"license": "MIT",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"publisher": "wmaurer",
 	"engines": {
 		"vscode": "^0.10.0"

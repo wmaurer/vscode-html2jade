@@ -39,25 +39,9 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(html2JadeDisposable);
 
 	const jade2HtmlDisposable = vscode.commands.registerTextEditorCommand('extension.jade2html', (textEditor, edit) => {
-		const replaceFn = textEditor.options.insertSpaces
-			? indents => Array(indents * textEditor.options.tabSize + 1).join(' ')
-			: indents => Array(indents + 1).join('\t');
-
-		const regex = /^(  )+/;
 		const selectionsTransformed = textEditor.selections.map(selection => {
 			const text = textEditor.document.getText(selection);
-			const htmlText = jade.compile(text, { pretty: true })() as string;
-			const replacementText = htmlText.split('\n')
-				.map(line => {
-					const matches = line.match(regex);
-					return {
-						line,
-						indents: !matches ? 0 : matches[0].length / 2
-					};
-				})
-				.map(x => x.line.replace(regex, replaceFn(x.indents)))
-				// .map(x => x.line)
-				.reduce((p, c) => p + '\n' + c, '');
+			const replacementText = jade.compile(text, { pretty: true })() as string;
 			return {
 				selection,
 				replacementText
@@ -70,8 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 		});
 
-		// vscode.commands.executeCommand('editor.action.format');
+		vscode.commands.executeCommand('editor.action.format');
 	});
 	context.subscriptions.push(jade2HtmlDisposable);
-
 }
